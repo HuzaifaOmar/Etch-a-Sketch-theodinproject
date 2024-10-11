@@ -57,19 +57,23 @@ const changeColor = (cell) => {
       0.0,
       parseFloat(cell.style.opacity) - 0.2
     )}`; // Decrease opacity for erasing
+    if (parseFloat(cell.style.opacity) == 0.0) {
+      cell.style.backgroundColor = "white";
+      cell.style.opacity = initialOpacity;
+    }
   } else {
     cell.style.opacity = `${Math.min(
       1.0,
       parseFloat(cell.style.opacity) + 0.2
     )}`; // Increase opacity
-  }
 
-  // Set the background color based on the mode
-  if (isRandomMode) {
-    const randomColor = Math.floor(Math.random() * 16777215).toString(16);
-    cell.style.backgroundColor = `#${randomColor}`; // Random color
-  } else {
-    cell.style.backgroundColor = currentColor; // Current selected color
+    // Set the background color based on the mode
+    if (isRandomMode) {
+      const randomColor = Math.floor(Math.random() * 16777215).toString(16);
+      cell.style.backgroundColor = `#${randomColor}`; // Random color
+    } else {
+      cell.style.backgroundColor = currentColor; // Current selected color
+    }
   }
 };
 
@@ -118,7 +122,7 @@ const resizeGrid = () => {
 const toggleBorder = () => {
   const cells = document.querySelectorAll(".cell");
   cells.forEach((cell) => {
-    cell.style.border = (hasBorder ? "1" : "0" )+ "px solid black"; // Toggle border style
+    cell.style.border = (hasBorder ? "1" : "0") + "px solid black"; // Toggle border style
   });
   hasBorder = !hasBorder; // Switch border state
 };
@@ -134,4 +138,3 @@ const toggleMode = () => {
 
 createGrid(16);
 setupEventListeners();
-
