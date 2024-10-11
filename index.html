@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A simple Etch-a-Sketch web app to practice DOM manipulation"
+    />
+    <title>Etch-a-Sketch</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Etch-a-Sketch</h1>
+    </header>
+    <h2></h2>
+    <main>
+      <!-- Hidden color picker -->
+      <input
+        type="color"
+        id="color-picker"
+        value="#000000"
+        style="display: none"
+      />
+
+      <div id="grid-container" aria-label="Drawing Grid"></div>
+      <section id="controls">
+        <button id="resize-button" aria-label="Resize Grid">Resize Grid</button>
+        <button id="color-picker-button" aria-label="Change Color">
+          Change Color
+        </button>
+        <button id="random-mode-button" aria-label="Random Colors">
+          Random Colors
+        </button>
+        <button id="clear-button" aria-label="Clear Grid">Clear Grid</button>
+        <button id="border-button" aria-label="Toggle Border">
+          Toggle Grid Border
+        </button>
+        <button id="mode-button" aria-label="Drawing Mode"></button>
+      </section>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
