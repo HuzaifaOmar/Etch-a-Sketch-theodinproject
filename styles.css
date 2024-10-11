@@ -1,5 +1,6 @@
 :root {
-  --primary-font: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  --primary-font: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", Geneva,
+    Verdana, sans-serif;
   --primary-color: #f0f0f0;
   --accent-color: #000;
   --border-radius: 0.5rem;
@@ -51,6 +52,7 @@ main {
   border: 1px solid var(--accent-color);
   transition: background-color var(--transition-duration),
     opacity var(--transition-duration);
+  cursor: unset;
 }
 
 #controls {
